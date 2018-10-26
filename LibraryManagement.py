@@ -3,8 +3,8 @@ import mysql.connector
 from mysql.connector import errorcode
 
 config = {
-  'user': 'frootyloops',
-  'password': 'Helvetica',
+  'user': '',
+  'password': '',
   'host': 'the-library.cal2dzrrcm9n.us-east-2.rds.amazonaws.com',
   'database': 'BookTable',
   'raise_on_warnings': True
