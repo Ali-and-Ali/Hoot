@@ -1,6 +1,6 @@
 import hashlib, uuid
 
-def hashpass( password ):
+def createhash ( password ):
   salt = uuid.uuid4().hex
   hash = hashlib.sha512(password + salt).hexdigest()
   return {'hash':hash, 'salt':salt}
