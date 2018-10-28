@@ -1,12 +1,13 @@
 from tkinter import *
 import mysql.connector
 from mysql.connector import errorcode
+from LoginVerification import verifyLogin
 
 config = {
-  'user': '',
-  'password': '',
+  'user': 'frootyloops',
+  'password': 'Helvetica',
   'host': 'the-library.cal2dzrrcm9n.us-east-2.rds.amazonaws.com',
-  'database': 'BookTable',
+  'database': 'Hoot',
   'raise_on_warnings': True
 }
 
@@ -20,8 +21,8 @@ except mysql.connector.Error as err:
     else:
         print(err)
 else:
+    verifyLogin( con, "Ali", "password" )
     con.close()
-    print("Success")
 
 #window = Tk()
 

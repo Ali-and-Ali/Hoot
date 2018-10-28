@@ -1,10 +1,13 @@
 import hashlib, uuid
 
-def createhash ( password ):
+def createHash ( password ):
   salt = uuid.uuid4().hex
-  hash = hashlib.sha512(password + salt).hexdigest()
-  return {'hash':hash, 'salt':salt}
+  hashed_pass = hashlib.sha512(password.encode('utf-8') + salt.encode('utf-8')).hexdigest()
+  return {'hash':hashed_pass, 'salt':salt}
 
-def verifypass ( password, salt ):
-  hash = hashlib.sha512(password + salt).hexdigest()
-  return hash
+def verifyPass ( password, results ):
+  hashed_pass = hashlib.sha512(password.encode('utf-8') + results[0][1].encode('utf-8')).hexdigest()
+  if hashed_pass == results[0][0]:
+    return True
+  else:
+    return False
