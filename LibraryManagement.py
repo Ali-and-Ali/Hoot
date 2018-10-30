@@ -3,6 +3,7 @@ import mysql.connector
 from mysql.connector import errorcode
 from LoginVerification import verifyLogin
 
+# Defines credentials
 config = {
   'user': 'frootyloops',
   'password': 'Helvetica',
@@ -12,6 +13,7 @@ config = {
 }
 
 try:
+    # Tries to access mysql through the credentials in "config"
     con = mysql.connector.connect(**config)
 except mysql.connector.Error as err:
     if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
