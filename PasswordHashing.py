@@ -26,6 +26,3 @@ def verifyUser ( password, username ):
   r = requests.post(API, json.dumps(params))
   
   return r.json()['body']
-
-print(createHash("France", "AliC"))
-print(verifyUser("France", "AliC"))
