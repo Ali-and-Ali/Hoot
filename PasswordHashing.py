@@ -26,7 +26,6 @@ def verifyUser ( password, username ):
   params = {"username": username}
   # We prepare the request to be sent and make the request
   r = requests.post(API, json.dumps(params))
-  
   # Using the salt that we just got from the database we will hash the password and send it to the API to confirm that the hash on the
   # database and the one we sent match
   hashed_pass = hashlib.sha512(password.encode('utf-8') + r.json()['body'].replace('"', '').encode('utf-8')).hexdigest()

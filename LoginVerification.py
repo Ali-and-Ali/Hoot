@@ -23,5 +23,3 @@ def verifyLogin( con, user, password ):
   except mysql.connector.Error as err:
     if err.errno == errorcode.ER_BAD_FIELD_ERROR:
       print("User Not Found!")
-
-
