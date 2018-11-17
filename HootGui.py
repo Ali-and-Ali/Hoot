@@ -9,7 +9,7 @@ class Login:
         # Master refers to the window itself and self is the class
         self.master = master
         # We set the title for our window here
-        master.title("Hoot - A Library Manager")
+        master.title("Hoot - A Library Manager'paEKnbzpodihtdzougteuihx")
         # Creating labels is pretty easy, right now almost all of the GUI elements are at default width and height
         self.label = Label(master, text="Login to Hoot!")
         # Packing elements actually publishes them to the GUI window
